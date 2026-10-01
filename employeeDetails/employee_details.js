@@ -20,6 +20,12 @@ function displayHREmployees() {
       const hrEmployeesDisplay = hrEmployees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - ${employee.salary}</p>`).join('');
       document.getElementById('employeesDetails').innerHTML = hrEmployeesDisplay;
 }
+function displayFinanceEmployees(){
+    var eemployees=employees.filter(employee=>employee.department== "Finance")
+    var displayfromobjtoelements=eemployees.map(employee=>`<p>${employee.name}</p> `)
+    document.getElementById('employeesDetails').innerHTML = displayfromobjtoelements;
+
+}
 function findEmployeeById(employeeId) {
       const foundEmployee = employees.find(employee => employee.id === employeeId);
       if (foundEmployee) {
